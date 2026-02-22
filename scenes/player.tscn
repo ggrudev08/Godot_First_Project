@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://btoor1uajck8q"]
+[gd_scene format=3 uid="uid://btoor1uajck8q"]
 
 [ext_resource type="Texture2D" uid="uid://ce3auy2ubylxr" path="res://assets/player/knight.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://5kpnouebcdam" path="res://scripts/player.gd" id="1_g2els"]
@@ -42,10 +42,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tuyoq"]
 size = Vector2(4, 5)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" unique_id=284032360]
 script = ExtResource("1_g2els")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=259827483]
 position = Vector2(0, -5)
 scale = Vector2(0.38183594, 0.38964844)
 sprite_frames = SubResource("SpriteFrames_my7n2")
@@ -53,6 +53,9 @@ animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.272305
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1919011608]
 position = Vector2(0, -3.5)
 shape = SubResource("RectangleShape2D_tuyoq")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=334936822]
+zoom = Vector2(16, 16)

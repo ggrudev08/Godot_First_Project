@@ -8,12 +8,35 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="First Project"
 run/main_scene="uid://btb0kwlbxcm88"
-config/features=PackedStringArray("4.5", "GL Compatibility")
+config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[input]
+
+move_left={
+"deadzone": 0.2,
+"events": []
+}
+move_right={
+"deadzone": 0.2,
+"events": []
+}
+move_up={
+"deadzone": 0.2,
+"events": []
+}
+move_down={
+"deadzone": 0.2,
+"events": []
+}
 
 [rendering]
 

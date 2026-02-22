@@ -1,13 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://btb0kwlbxcm88"]
+[gd_scene format=3 uid="uid://btb0kwlbxcm88"]
 
 [ext_resource type="PackedScene" uid="uid://btoor1uajck8q" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://bcce17x0fgij4" path="res://assets/town/tilemap.png" id="2_yqjtg"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yqjtg"]
 texture = ExtResource("2_yqjtg")
-texture_region_size = Vector2i(17, 17)
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -126,6 +123,7 @@ texture_region_size = Vector2i(17, 17)
 8:9/0 = 0
 9:9/0 = 0
 10:9/0 = 0
+11:9/0 = 0
 0:10/0 = 0
 1:10/0 = 0
 2:10/0 = 0
@@ -138,26 +136,15 @@ texture_region_size = Vector2i(17, 17)
 9:10/0 = 0
 10:10/0 = 0
 11:10/0 = 0
-11:9/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_lbhrr"]
-sources/0 = SubResource("TileSetAtlasSource_lnu2h")
+[sub_resource type="TileSet" id="TileSet_lnu2h"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_yqjtg")
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" unique_id=2126259297]
 
-[node name="Player" parent="." instance=ExtResource("1_uwrxv")]
+[node name="Player" parent="." unique_id=1638223818 instance=ExtResource("1_uwrxv")]
 position = Vector2(0, -12)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-1, 0)
-zoom = Vector2(8, 8)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 16)
-shape = SubResource("WorldBoundaryShape2D_uwrxv")
-
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_lbhrr")
-format = 2
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=497719807]
+tile_set = SubResource("TileSet_lnu2h")
