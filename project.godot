@@ -19,6 +19,10 @@ run/main_scene="uid://btb0kwlbxcm88"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[global_group]
+
+player=""
+
 [input]
 
 move_left={

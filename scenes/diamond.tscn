@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cijy6r6ne7d8"]
 
 [ext_resource type="Texture2D" uid="uid://dkweqhdcgytkj" path="res://assets/AnimatedPickups/DiamondSpinAnimation.png" id="1_0a7ml"]
-[ext_resource type="Script" uid="uid://derj1eptaw8gi" path="res://scenes/diamond.gd" id="1_okr8r"]
+[ext_resource type="Script" uid="uid://derj1eptaw8gi" path="res://scripts/diamond.gd" id="1_okr8r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_okr8r"]
 atlas = ExtResource("1_0a7ml")
