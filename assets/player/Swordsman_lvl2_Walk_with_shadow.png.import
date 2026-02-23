@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ce3auy2ubylxr"
-path="res://.godot/imported/knight.png-d0c57d4a117ae417b80cddff42839cfd.ctex"
+uid="uid://bso6a3r767o7g"
+path="res://.godot/imported/Swordsman_lvl2_Walk_with_shadow.png-31abe8210a38d80cec93724e83021b2f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/knight.png"
-dest_files=["res://.godot/imported/knight.png-d0c57d4a117ae417b80cddff42839cfd.ctex"]
+source_file="res://assets/player/Swordsman_lvl2_Walk_with_shadow.png"
+dest_files=["res://.godot/imported/Swordsman_lvl2_Walk_with_shadow.png-31abe8210a38d80cec93724e83021b2f.ctex"]
 
 [params]
 

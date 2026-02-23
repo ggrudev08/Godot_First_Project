@@ -28,7 +28,7 @@ func _physics_process(delta: float) -> void:
 	var next_pos = navigation_agent_2d.get_next_path_position()
 	velocity = current_pos.direction_to(next_pos) * SPEED
 	
-	if velocity > Vector2.ZERO:
+	if velocity != Vector2.ZERO:
 		animated_sprite.play("running")
 	else:
 		animated_sprite.play("idle")
