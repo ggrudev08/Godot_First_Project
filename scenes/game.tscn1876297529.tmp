@@ -1819,9 +1819,10 @@ position = Vector2(-15, 49)
 [node name="Diamond3" parent="Diamonds" unique_id=380536181 instance=ExtResource("3_lnu2h")]
 position = Vector2(90, 54)
 
-[node name="Skeleton" parent="." unique_id=1722281620 instance=ExtResource("4_lbhrr")]
+[node name="Skeleton" parent="." unique_id=1722281620 node_paths=PackedStringArray("target") instance=ExtResource("4_lbhrr")]
 position = Vector2(112, 16)
 scale = Vector2(0.5, 0.5)
+target = NodePath("../Player")
 
 [node name="Borders" type="StaticBody2D" parent="." unique_id=542034321]
 

@@ -305,7 +305,7 @@ sprite_frames = SubResource("SpriteFrames_my7n2")
 animation = &"moving_right"
 autoplay = "idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1919011608]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1919011608 groups=["player"]]
 position = Vector2(0, -3.25)
 shape = SubResource("RectangleShape2D_tuyoq")
 
