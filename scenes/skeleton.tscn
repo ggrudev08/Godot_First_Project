@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b56c11y5jdvrx" path="res://assets/enemy/Idle/Idle-Sheet.png" id="1_7p1mj"]
 [ext_resource type="Script" uid="uid://cfhevvujpn53h" path="res://scripts/skeleton.gd" id="1_ivqcw"]
-[ext_resource type="Script" uid="uid://mkybb2t3n83j" path="res://scripts/kill_zone.gd" id="2_md0e3"]
+[ext_resource type="Script" uid="uid://mkybb2t3n83j" path="res://scripts/damage_zone.gd" id="2_md0e3"]
 [ext_resource type="Texture2D" uid="uid://d3sui7wxmq1ib" path="res://assets/enemy/Run/Run-Sheet.png" id="3_bnirc"]
 [ext_resource type="Script" uid="uid://ctlnk5tw8g0aq" path="res://scripts/active_range.gd" id="5_5pgwy"]
 
@@ -109,14 +109,15 @@ animation = &"running"
 autoplay = "idle"
 frame_progress = 0.9811724
 
-[node name="KillZone" type="Area2D" parent="." unique_id=1609283552]
+[node name="DamageZone" type="Area2D" parent="." unique_id=1609283552]
+scale = Vector2(1.3, 1.3)
 collision_mask = 2
 script = ExtResource("2_md0e3")
 
-[node name="KillZoneCollision" type="CollisionShape2D" parent="KillZone" unique_id=518199432]
+[node name="KillZoneCollision" type="CollisionShape2D" parent="DamageZone" unique_id=518199432]
 shape = SubResource("CircleShape2D_bnirc")
 
-[node name="Timer" type="Timer" parent="KillZone" unique_id=1427378617]
+[node name="Timer" type="Timer" parent="DamageZone" unique_id=1427378617]
 wait_time = 0.6
 one_shot = true
 
@@ -125,6 +126,8 @@ position = Vector2(-1, 2)
 shape = SubResource("RectangleShape2D_ivqcw")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1779402130]
+path_desired_distance = 10.0
+target_desired_distance = 5.0
 
 [node name="ActiveRange" type="Area2D" parent="." unique_id=574452345]
 collision_layer = 4
@@ -134,7 +137,8 @@ script = ExtResource("5_5pgwy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActiveRange" unique_id=759786922]
 shape = SubResource("CircleShape2D_5pgwy")
 
-[connection signal="body_entered" from="KillZone" to="KillZone" method="_on_body_entered"]
-[connection signal="timeout" from="KillZone/Timer" to="KillZone" method="_on_timer_timeout"]
+[connection signal="body_entered" from="DamageZone" to="DamageZone" method="_on_body_entered"]
+[connection signal="body_exited" from="DamageZone" to="DamageZone" method="_on_body_exited"]
+[connection signal="timeout" from="DamageZone/Timer" to="DamageZone" method="_on_timer_timeout"]
 [connection signal="body_entered" from="ActiveRange" to="ActiveRange" method="_on_body_entered"]
 [connection signal="body_exited" from="ActiveRange" to="ActiveRange" method="_on_body_exited"]

@@ -28,6 +28,7 @@ func seeker_setup():
 		navigation_agent_2d.target_position = target.global_position
 		
 func _physics_process(delta: float) -> void:
+	
 	if target and can_track:
 		navigation_agent_2d.target_position = target.global_position
 	
